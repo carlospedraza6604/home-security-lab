@@ -142,7 +142,7 @@ The `/techniques` folder contains notes on attack categories encountered across 
 ## 🚀 Progress
 
 - [x] Lab environment set up
-- [x] Kali Linux configured
+- [ ] Kali Linux configured
 - [ ] Metasploitable 2 — full report complete
 - [ ] DVWA — full report complete
 - [ ] Windows 11 — full report complete
