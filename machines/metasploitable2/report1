@@ -1,0 +1,32 @@
+## Target: Metasploitable 2
+**Date:** 2026-05-28
+**IP:** 192.168.56.101
+
+### Finding
+Port 21 — vsftpd 2.3.4 — backdoor (CVE-2011-2523)
+
+### What It Is
+A malicious backdoor was secretly introduced into the vsftpd 
+2.3.4 source code in 2011. When triggered it opens a shell 
+on port 6200 giving the attacker root access with no 
+authentication required.
+
+### Exploit Used
+Tool: Metasploit
+Module: exploit/unix/ftp/vsftpd_234_backdoor
+Result: Root Meterpreter session obtained
+
+### Impact
+Full root access to the system with no credentials. An 
+attacker could read all files, create backdoor accounts, 
+pivot to other systems, or destroy the machine entirely.
+
+### Patch
+- Remove vsftpd 2.3.4
+- Upgrade to vsftpd 3.0.5 or later
+- Disable FTP entirely if not needed
+- Block port 21 via firewall
+
+### Verification
+- Re-run exploit after patching
+- Confirm connection is refused
